@@ -1,0 +1,47 @@
+rules_version = '2';
+
+// DINÂMICO PRO — Firestore security rules.
+// Every write goes through the Vercel API (Firebase Admin SDK, which bypasses these rules after
+// verifying the caller's ID token and role). Direct browser access is therefore read-only and
+// strictly tenant-scoped: a customer can only ever read their own documents.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function profile() { return get(/databases/$(database)/documents/users/$(request.auth.uid)).data; }
+    function isAdmin() { return signedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid)) && profile().role == 'admin'; }
+    function isApprovedOwner(ownerId) {
+      return signedIn() && request.auth.uid == ownerId && profile().status == 'approved';
+    }
+
+    // Own profile only (admin: all). Role/status can never be changed from the client.
+    match /users/{uid} {
+      allow read: if (signedIn() && request.auth.uid == uid) || isAdmin();
+      allow write: if false;
+    }
+
+    match /batches/{id} {
+      allow read: if isAdmin() || isApprovedOwner(resource.data.owner_id);
+      allow write: if false;
+    }
+
+    match /plaques/{id} {
+      allow read: if isAdmin() || isApprovedOwner(resource.data.owner_id);
+      allow write: if false;
+    }
+
+    match /scans/{id} {
+      allow read: if isAdmin() || isApprovedOwner(resource.data.owner_id);
+      allow write: if false;
+    }
+
+    match /templates/{id} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    // Server-only collections: counters, idempotency, settings, template_assets, admin_actions…
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "yarn build",
+  "outputDirectory": "dist",
+  "installCommand": "yarn install --frozen-lockfile",
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api?__p=:path*" },
+    { "source": "/r/:code", "destination": "/api?__p=r/:code" },
+    { "source": "/((?!api/|templates/|brand/|assets/).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] }
+  ]
+}

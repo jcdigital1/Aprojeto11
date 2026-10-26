@@ -19,3 +19,10 @@ users, batches, plaques (code permanente, number global sequencial, qr_url fixo,
 - Admin: /admin (estatísticas reais, ao vivo), /admin/compradores, /admin/modelos (calibração arrastável + aprovar produção + enviar base limpa), /admin/configuracoes (domínio, links de redefinição, desativar QR).
 - Redirect público: GET /api/r/{code} → 302 destino; sem destino/desativado → /q/indisponivel. Registra leitura.
 - Domínio: enquanto `production_confirmed=false`, lotes ficam marcados como "modo teste" (não imprimir para venda).
+
+## Versão independente (Vercel + Firebase) — /app/dinamico-pro
+- Mesmo contrato /api (server/routes.ts) servido por uma função Vercel (api/index.ts) com Firebase Admin SDK; dados no Firestore (mesmos IDs), login no Firebase Auth (token Bearer verificado no servidor; papel/status em users/{uid}).
+- Senhas: Firebase (cadastro, reset por e-mail, troca com reautenticação). Admin bootstrap = ADMIN_EMAIL quando não existe admin.
+- firestore.rules: leitura só do próprio dono aprovado (admin lê tudo); toda escrita só pelo servidor.
+- Migração: scripts/export_mongo.py → scripts/import-to-firebase.ts (--apply, --send-reset-emails, --new-base-url).
+- Testado com emuladores Firebase (Java 21 em /opt/jdk21). O app Emergent original continua intacto.

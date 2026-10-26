@@ -1,0 +1,14 @@
+node_modules
+dist
+.vercel
+*.log
+.env
+.env.local
+.env.*.local
+# Exported customer data and service-account keys must never be committed
+migration/
+*service-account*.json
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
