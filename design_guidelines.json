@@ -1,0 +1,196 @@
+{
+  "theme": "dark",
+  "project_name": "DINÂMICO PRO",
+  "archetype": "ARCHETYPE 5: LUXURY & HIGH-TECH (Midnight Blue & Electric Glow)",
+  "language": "pt-BR",
+  "summary": "Commercial multi-user SaaS for generating printable 10x10cm NFC plaques with unique permanent editable dynamic QR codes. Features auth-only entrance with elevated 3D glass card, approval gate, multi-template batch generator (10/30/50/100), interactive calibration canvas for admins, batch detail with PDF A4 & ZIP exports, QR code redirect manager, and customer/admin dashboards.",
+  "colors": {
+    "palette_name": "Midnight Blue Electric 3D",
+    "accent": "#00E5FF",
+    "on_accent": "#030A16",
+    "primary": "#2563EB",
+    "on_primary": "#FFFFFF",
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#030712",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "link": "#38BDF8",
+          "error": "#F87171",
+          "success": "#34D399",
+          "warning": "#FBBF24"
+        }
+      },
+      {
+        "name": "sidebar",
+        "kind": "solid",
+        "bg": "#050C1A",
+        "on_bg": "#F1F5F9",
+        "on_bg_muted": "#64748B",
+        "roles": {
+          "active_item_bg": "#1E3A8A",
+          "active_item_text": "#38BDF8",
+          "border": "#1E293B"
+        }
+      },
+      {
+        "name": "card",
+        "kind": "solid",
+        "bg": "#0A1224",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "border": "#1E293B",
+          "highlight_border": "#2563EB",
+          "badge_bg": "#0F172A",
+          "badge_text": "#38BDF8"
+        }
+      },
+      {
+        "name": "auth_card",
+        "kind": "glass",
+        "contrast_against": "#0A152C",
+        "guarantee": "backdrop-blur-2xl bg-[#091428]/85 border border-blue-500/30 shadow-[0_20px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(37,99,235,0.2)]",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "link": "#38BDF8",
+          "error": "#F87171",
+          "button_primary": "#2563EB",
+          "button_primary_text": "#FFFFFF"
+        }
+      },
+      {
+        "name": "modal",
+        "kind": "solid",
+        "bg": "#0B152B",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "border": "#2563EB40",
+          "overlay": "rgba(3, 7, 18, 0.85)"
+        }
+      },
+      {
+        "name": "plaque_preview_surface",
+        "kind": "solid",
+        "bg": "#080E1E",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#64748B"
+      }
+    ]
+  },
+  "typography": {
+    "font_family_heading": "Outfit, sans-serif",
+    "font_family_body": "Plus Jakarta Sans, sans-serif",
+    "font_family_mono": "JetBrains Mono, monospace",
+    "import_statements": [
+      "@import \"@fontsource-variable/outfit\";",
+      "@import \"@fontsource-variable/plus-jakarta-sans\";",
+      "@import \"@fontsource-variable/jetbrains-mono\";"
+    ],
+    "scale_px": {
+      "display": 52,
+      "h1": 36,
+      "h2": 28,
+      "h3": 20,
+      "h4": 16,
+      "body": 15,
+      "caption": 13
+    },
+    "rules": {
+      "headings": "font-heading font-semibold tracking-tight text-slate-100",
+      "labels_overline": "font-sans uppercase text-[11px] font-bold tracking-[0.2em] text-blue-400",
+      "body": "font-sans text-[15px] leading-relaxed text-slate-300",
+      "mono_numbers": "font-mono font-medium tracking-normal text-cyan-300"
+    }
+  },
+  "entry_surfaces": {
+    "/": "centered elevated 3D glass card auth screen with electric blue lighting bloom, DINÂMICO PRO 3D metallic logo, switchable tabs for login and registration",
+    "/login": "centered elevated 3D glass card auth screen with electric blue lighting bloom, DINÂMICO PRO 3D metallic logo, fields E-mail / Senha, primary ENTRAR, secondary CRIAR CONTA / ESQUECI SENHA",
+    "/register": "centered elevated 3D glass card auth screen with fields Nome completo, E-mail, Senha, Confirmar senha, CADASTRAR, VOLTAR AO LOGIN",
+    "/pending": "centered elevated 3D glass card with animated status badge, explanation of admin approval pending, and status refresh / logout actions",
+    "/app": "dark command center layout with midnight blue sidebar, metrics bar, tab navigation for Gerar Lote, Meus Lotes, Meus QR Codes, Exportações and Configurações",
+    "/admin": "high-contrast admin control panel with key SaaS statistics, approval queue table with instant status toggles, and live 10x10cm plaque calibration canvas"
+  },
+  "visual_enhancers": {
+    "background_gradient": "bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(37,99,235,0.25),rgba(3,7,18,1))]",
+    "card_3d_elevation": "shadow-[0_12px_36px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.06),inset_0_1px_0_rgba(255,255,255,0.1)]",
+    "electric_glow": "shadow-[0_0_25px_rgba(0,229,255,0.35)]",
+    "plaque_card_art": "rounded-xl overflow-hidden border border-blue-500/20 bg-gradient-to-b from-[#111C35] to-[#0A1224] transition-all hover:scale-[1.02] hover:border-cyan-400/50 hover:shadow-[0_10px_30px_rgba(0,229,255,0.2)]",
+    "metallic_badge": "bg-gradient-to-r from-blue-900/60 via-slate-800/80 to-blue-900/60 border border-blue-400/30 text-blue-200"
+  },
+  "motion": {
+    "hover_lift": "transition-transform duration-200 ease-out hover:-translate-y-0.5",
+    "button_press": "active:scale-[0.98] transition-transform duration-100",
+    "tab_transition": "animate-in fade-in-50 duration-200",
+    "glow_pulse": "animate-pulse"
+  },
+  "accessibility": {
+    "contrast_target": "WCAG AA (minimum 4.5:1 for normal text, 3:1 for bold/display)",
+    "focus_ring": "focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#030712] focus-visible:outline-none",
+    "keyboard_navigation": "All modal dialogs, plaque selectors, batch quantities, and calibration sliders are keyboard controllable",
+    "test_attributes": "All inputs, buttons, plaque templates, status badges, calibration controls, and exports MUST include data-testid attribute in kebab-case."
+  },
+  "component_hierarchy": {
+    "auth": {
+      "AuthLayout": "frontend/src/components/auth/AuthLayout.tsx",
+      "LoginForm": "frontend/src/components/auth/LoginForm.tsx",
+      "RegisterForm": "frontend/src/components/auth/RegisterForm.tsx",
+      "PendingApproval": "frontend/src/components/auth/PendingApproval.tsx",
+      "Logo3D": "frontend/src/components/common/Logo3D.tsx"
+    },
+    "customer": {
+      "AppLayout": "frontend/src/components/layout/AppLayout.tsx",
+      "Sidebar": "frontend/src/components/layout/Sidebar.tsx",
+      "Header": "frontend/src/components/layout/Header.tsx",
+      "BatchGenerator": "frontend/src/components/customer/BatchGenerator.tsx",
+      "TemplatePicker": "frontend/src/components/customer/TemplatePicker.tsx",
+      "BatchList": "frontend/src/components/customer/BatchList.tsx",
+      "BatchDetail": "frontend/src/components/customer/BatchDetail.tsx",
+      "PlaqueGrid": "frontend/src/components/customer/PlaqueGrid.tsx",
+      "PlaqueItem": "frontend/src/components/customer/PlaqueItem.tsx",
+      "QrManager": "frontend/src/components/customer/QrManager.tsx",
+      "ExportsView": "frontend/src/components/customer/ExportsView.tsx",
+      "SettingsView": "frontend/src/components/customer/SettingsView.tsx"
+    },
+    "admin": {
+      "AdminDashboard": "frontend/src/components/admin/AdminDashboard.tsx",
+      "AdminStats": "frontend/src/components/admin/AdminStats.tsx",
+      "BuyersTable": "frontend/src/components/admin/BuyersTable.tsx",
+      "TemplateCalibration": "frontend/src/components/admin/TemplateCalibration.tsx",
+      "AdminSettings": "frontend/src/components/admin/AdminSettings.tsx"
+    },
+    "pdf_and_export": {
+      "PdfGenerator": "frontend/src/lib/pdfGenerator.ts",
+      "ZipExporter": "frontend/src/lib/zipExporter.ts"
+    }
+  },
+  "key_features_and_rules": {
+    "plaque_dimensions": "10x10 cm square format, 300 DPI print ready calculation",
+    "templates": [
+      { "id": "t1", "name": "Classic Royal Blue Gold", "category": "Premium", "nfc_badge": "NFC + QR", "accent_color": "#2563EB" },
+      { "id": "t2", "name": "Carbon Obsidian Black", "category": "Luxury", "nfc_badge": "NFC DUAL", "accent_color": "#00E5FF" },
+      { "id": "t3", "name": "Minimalist Matte White", "category": "Clean", "nfc_badge": "TAP & SCAN", "accent_color": "#3B82F6" },
+      { "id": "t4", "name": "Electric Cyber Blue", "category": "Tech", "nfc_badge": "NFC TOUCH", "accent_color": "#38BDF8" },
+      { "id": "t5", "name": "Brushed Steel Titanium", "category": "Industrial", "nfc_badge": "NFC INSTANT", "accent_color": "#60A5FA" },
+      { "id": "t6", "name": "Deep Midnight Azure", "category": "Corporate", "nfc_badge": "NFC SMART", "accent_color": "#1D4ED8" },
+      { "id": "t7", "name": "Neon Circuit Hologram", "category": "Nightlife", "nfc_badge": "TAP ME NFC", "accent_color": "#06B6D4" },
+      { "id": "t8", "name": "Gold Crest Executive", "category": "VIP", "nfc_badge": "NFC EXCLUSIVE", "accent_color": "#F59E0B" }
+    ],
+    "batch_quantities": [10, 30, 50, 100],
+    "admin_calibration_tool": "Allows interactive drag & numeric precision inputs for QR code (X, Y, size, padding) and Serial number (X, Y, font-size, color, alignment) over 10x10cm plaque canvas with live zoom and real preview"
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the Verbatim Visual Identity: Deep midnight-blue (#030712 / #050C1A / #0A1224), electric cyan/blue highlights (#00E5FF / #38BDF8 / #2563EB), clean white typography (#F8FAFC), glassmorphism with delicate 1px border overlays, and 3D lighting depth.",
+    "Do NOT use red as the primary interface color (only for destructive actions like delete/block).",
+    "Portuguese text everywhere: 'DINÂMICO PRO', 'ENTRAR', 'CADASTRAR', 'ESQUECI MINHA SENHA', 'Aguardando aprovação', 'Gerar lote', 'Meus lotes', 'Meus QR Codes', 'Exportações', 'Configurações', 'Compradores', 'BAIXAR PDF A4', etc.",
+    "Make the authentication screen the root view for unauthenticated visitors (NO generic marketing landing page).",
+    "Provide a simulated multi-role switch or easy demo login buttons (e.g. Admin: admin@dinamicopro.com.br, Cliente Aprovado: cliente@empresa.com.br, Cliente Pendente: novo@empresa.com.br) so testers and judges can immediately test all 3 states.",
+    "Ensure all interactive elements have data-testid attributes (e.g., data-testid='login-email-input', data-testid='batch-generate-btn', data-testid='download-pdf-a4-btn', data-testid='template-calibration-save').",
+    "Implement real client-side PDF A4 generation for batches (e.g. using jsPDF or html2canvas/canvas rendering with 4 plaques per A4 sheet with cut marks) so the 'BAIXAR PDF A4' button delivers real printable files."
+  ]
+}
